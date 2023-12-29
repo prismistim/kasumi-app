@@ -11,12 +11,12 @@ html.wf-active {
 }
 
 body {
-  font-family: "fira-mono", "a-otf-ud-shin-go-pr6n", sans-serif;
+  font-family: "fira-mono", "heisei-kaku-gothic-std", sans-serif;
 }
 
 @layer base {
   .article h1 {
-    @apply card-title mb-2 text-primary font-title
+    @apply card-title text-2xl mb-2 text-primary font-title
   }
 
   .article h2 {
@@ -24,7 +24,7 @@ body {
   }
 
   .article h3 {
-    @apply font-bold mb-2 text-secondary font-title
+    @apply font-bold mb-2 font-title
   }
 
   .article p {

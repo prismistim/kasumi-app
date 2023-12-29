@@ -28,7 +28,7 @@ const current = ref()
           <template v-if="current && current[index]">
             <a
               :href="`#${dayjs(current[index].frontmatter.date).format('YYYYMMDDHHmm')}`"
-              class="font-title text-sm mb-1 transition hover:text-accent ease-in hover:cursor-pointer"
+              class="font-title text-sm text-indigo-200/50 underline underline-offset-4 decoration-indigo-600/50 hover:decoration-indigo-600 decoration-1 mb-1 transition hover:text-indigo-400 ease-in hover:cursor-pointer"
             >
               {{ dayjs(current[index].frontmatter.date).format('YYYY-MM-DD HH:mm') }}
             </a>

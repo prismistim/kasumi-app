@@ -7,7 +7,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      title: ['ab-sekka'],
+      title: ['dotgothic16'],
       head: ['fira-mono']
     },
     extend: {},
@@ -20,7 +20,7 @@ export default {
       {
         mytheme: {
           ...require("daisyui/src/theming/themes")["black"],
-          "primary": "#9ac427",
+          "primary": "#7989ea",
           "secondary": "#71def7",
           "accent": "#e23d61",
           "neutral": "#3d4451",
