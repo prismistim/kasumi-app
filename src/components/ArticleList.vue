@@ -2,7 +2,11 @@
 import { defineAsyncComponent, ref } from 'vue'
 import dayjs from 'dayjs'
 
-const components = Object.keys(import.meta.glob('@/contents/2023/*.md')).map(
+const components = Object.keys(import.meta.glob('@/contents/2023/*.md')).sort((a, b) => {
+  return dayjs(a.split('/').reverse()[0].slice(0, -3), 'MMDD').isBefore(
+    dayjs(b.split('/').reverse()[0].slice(0, -3), 'MMDD')
+  ) ? 1 : -1
+}).map(
   (item) => {
     return defineAsyncComponent(
       () =>
@@ -21,9 +25,14 @@ const current = ref()
     <template v-for="(item, index) in components" :key="index">
       <div :id="`${index}`" class="card">
         <div class="card-body">
-          <a v-if="current" :href="`#${index}`" class="font-title text-sm mb-1 transition hover:text-accent ease-in hover:cursor-pointer">
-            {{ dayjs(current[0].frontmatter.date).format('YYYY-MM-DD HH:mm') }}
-          </a>
+          <template v-if="current && current[index]">
+            <a
+              :href="`#${dayjs(current[index].frontmatter.date).format('YYYYMMDDHHmm')}`"
+              class="font-title text-sm mb-1 transition hover:text-accent ease-in hover:cursor-pointer"
+            >
+              {{ dayjs(current[index].frontmatter.date).format('YYYY-MM-DD HH:mm') }}
+            </a>
+          </template>
           <component :is="item" ref="current"></component>
         </div>
       </div>
