@@ -20,7 +20,7 @@ body {
   }
 
   .article h2 {
-    @apply text-lg font-bold mb-2 font-title
+    @apply text-lg font-bold mb-2 font-title text-secondary
   }
 
   .article h3 {
@@ -36,6 +36,6 @@ body {
   }
 
   .article img {
-    @apply rounded-box
+    @apply rounded-lg
   }
 }
