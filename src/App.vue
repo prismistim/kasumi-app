@@ -1,14 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
 import ArticleList from '@/components/ArticleList.vue'
-
-onMounted(() => {
-  try {
-    Typekit.load({ async: true })
-  } catch (e) {
-    console.log(e)
-  }
-})
 </script>
 
 <template>
