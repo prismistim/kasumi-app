@@ -20,7 +20,7 @@ body {
   }
 
   .article h2 {
-    @apply text-lg font-bold mb-2 font-title text-secondary
+    @apply text-lg font-bold mb-2 font-title text-primary
   }
 
   .article h3 {
@@ -29,6 +29,14 @@ body {
 
   .article p {
     @apply tracking-widest text-neutral-400 leading-9
+  }
+
+  .article a {
+    @apply text-sm text-rose-400 underline underline-offset-4 decoration-rose-400 hover:decoration-rose-600 decoration-1 mb-1 transition hover:text-rose-600 ease-in hover:cursor-pointer
+  }
+
+  .article a.date {
+    @apply font-title text-sm text-neutral-500 underline underline-offset-4 decoration-indigo-600/50 hover:decoration-indigo-600 decoration-1 mb-1 transition hover:text-indigo-400 ease-in hover:cursor-pointer
   }
 
   .card-body > * {
